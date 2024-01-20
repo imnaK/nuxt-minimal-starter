@@ -26,24 +26,35 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <NuxtLink to="/second">Second_Page</NuxtLink>
+  <nav>
+    <NuxtLink to="/second">Second_Page</NuxtLink>
+  </nav>
   <header>
     <img src="/image.webp" height="512" :style="styleObject" />
   </header>
   <div class="content">
-    <h2>For scrolling:</h2>
+    <h2>Steps to reproduce:</h2>
     <p>
+      - The parallax effect will break if the page rerenders some part. You can
+      test this by editing "THIS" word in code.<br />
+      - It will also break if you build the project and run it on preview or
+      production server.
+    </p>
+    <h2>Temporary fix:</h2>
+    <p>
+      - It will be fixed if you reload the page (only on dev server).<br />
+      - It will also be fixed if you switch pages and come back.<br />
+    </p>
+    <h2>Real fix:</h2>
+    <p>The actual fix is in the `index.vue` file commented out in line 15.</p>
+    <h2>For scrolling:</h2>
+    <p s>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel velit
       mollitia quidem incidunt nemo iusto sequi blanditiis, dolore quisquam eos
       reiciendis atque consequuntur ducimus assumenda at! Reiciendis magnam quas
       accusamus soluta fuga commodi maiores. Earum necessitatibus iste optio
       nisi officia porro facilis qui, ut ad quod itaque, harum, consequuntur
       molestiae. Id reprehenderit vitae nisi culpa quas qui, odio dicta.
-      Praesentium magni quae perspiciatis nulla deleniti eligendi quisquam
-      suscipit quo eveniet, minima optio laboriosam eaque, voluptatibus omnis
-      fugit tempora ea sint aliquam eum libero! Numquam doloremque
-      necessitatibus itaque excepturi ut odio consequatur enim sapiente ipsa
-      ullam. Enim laboriosam tempora sit? Cumque?
     </p>
   </div>
 </template>
@@ -57,8 +68,14 @@ header {
   box-shadow: inset 0 0 2rem 0 #000;
   padding: 2rem;
 }
-
-.content p {
+.content {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+p {
+  font-family: monospace;
+}
+[s] {
   max-width: 4rem;
 }
 </style>

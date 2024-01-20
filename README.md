@@ -1,8 +1,22 @@
-# Nuxt 3 Minimal Starter
+# nuxt-minimal-starter
+
+Project for representing a potential bug in nuxt3.
+I could not reproduce it in vue3 with a similar setup.
+
+## Steps to reproduce:
+- The parallax effect will break if the page rerenders some part. You can test this by editing "THIS" word in code. (`index.vue`)
+- It will also break if you build the project and run it on preview or production server.
+## Temporary fix:
+- It will be fixed if you reload the page (only on dev server).
+- It will also be fixed if you switch pages and come back.
+## Real fix:
+The actual fix is in the `index.vue` file commented out in line 15.
+
+## Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+### Setup
 
 Make sure to install the dependencies:
 
@@ -20,7 +34,7 @@ yarn install
 bun install
 ```
 
-## Development Server
+### Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -38,7 +52,7 @@ yarn dev
 bun run dev
 ```
 
-## Production
+### Production
 
 Build the application for production:
 

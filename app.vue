@@ -9,6 +9,9 @@ body {
   background-color: #232325;
   color: #fff;
 }
+nav {
+  max-width: 48rem;
+}
 a {
   color: #fff;
   padding: 1rem;
